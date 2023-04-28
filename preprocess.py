@@ -16,7 +16,7 @@ def map_question_number_to_level_group(question_number):
         return 'unknown'
 
 # Load the data
-train_data = pd.read_csv('train.csv')
+train_data = pd.read_csv('original_data/train.csv')
 train_labels = pd.read_csv('train_labels.csv')
 
 # Drop the columns with not sufficient numbers of values
@@ -52,7 +52,7 @@ data = pd.merge(train_data_agg.reset_index(), train_labels, on=['session_id', 'l
 data = data.drop(columns=['session_id_mean', 'session_id_sum', 'session_id_min', 'session_id_max', 'level_group_first', 'level_group_last', 'level_group_count', 'level_group_nunique'])
 
 # Save the data as CSV
-filename = "preprocessed.csv"
+filename = "preprocessed/preprocessed.csv"
 data.to_csv(filename, index=False)
 
 # Select only numeric columns
@@ -73,7 +73,7 @@ plt.show()
 data_numeric = data_numeric.dropna(axis=1)
 
 # Save the data as CSV
-filename = "preprocessed_numeric.csv"
+filename = "preprocessed/preprocessed_numeric.csv"
 data_numeric.to_csv(filename, index=False)
 
 # Calculate the mutual information

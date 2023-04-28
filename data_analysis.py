@@ -3,7 +3,7 @@ import pandas as pd
 import matplotlib.patches as mpatches
 
 # Load the data
-train_df = pd.read_csv('train.csv')
+train_df = pd.read_csv('original_data/train.csv')
 
 train_missing_ratios = train_df.isna().sum() / len(train_df)
 
