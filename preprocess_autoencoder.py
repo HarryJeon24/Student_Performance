@@ -17,6 +17,7 @@ df['text'] = pd.Categorical(df['text']).codes
 df['fqid'] = pd.Categorical(df['fqid']).codes
 df['room_fqid'] = pd.Categorical(df['room_fqid']).codes
 df['text_fqid'] = pd.Categorical(df['text_fqid']).codes
+df['level_group'] = pd.Categorical(df['level_group']).codes
 
 # Impute missing values
 imputer = SimpleImputer(strategy='mean')
